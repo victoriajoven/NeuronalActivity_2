@@ -1,0 +1,2 @@
+# NeuronalActivity_2
+Activity 2 - NEURAL AND EVOLUTIONARY COMPUTATION (Course 2025-2026)
