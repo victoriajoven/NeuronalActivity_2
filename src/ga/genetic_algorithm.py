@@ -33,7 +33,7 @@ class GeneticAlgorithm:
             population.evaluate(self.instance)
 
             if population.is_converged(self.patience):
-                print(f"Converged at generation {gen}")
+                print(f"Converged at generation: {gen}")
                 break
 
             parents = self.selection.select(population)

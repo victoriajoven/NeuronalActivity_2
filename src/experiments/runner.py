@@ -1,7 +1,7 @@
 from src.jobshop.parser import parse_orlib_jobshop
 from src.jobshop.jobshop_instance import JobShopInstance
 from src.experiments.experiment import Experiment
-from src.ga.techniques.selection import TournamentSelection
+from src.ga.techniques.selection import RouletteWheelSelection, TournamentSelection
 from src.ga.techniques.crossover import PrecedencePreservingCrossover
 from src.ga.techniques.mutation import SwapMutation
 
@@ -22,7 +22,7 @@ def run_all_experiments():
     configs = [
     # Tournament + PPX + Swap
     {
-        "name": "T_PPX_Swap",
+        "name": "Tournament_PPX_Swap",
         "population_size": 50,
         "selection": TournamentSelection(),
         "crossover": PrecedencePreservingCrossover(),
@@ -31,7 +31,17 @@ def run_all_experiments():
         "max_generations": 300,
         "patience": 30,
     },
-
+    # Roulette + PPX + Swap
+    {
+        "name": "Roulette_PPX_Swap",
+        "population_size": 50,
+        "selection": RouletteWheelSelection(),
+        "crossover": PrecedencePreservingCrossover(),
+        "mutation": SwapMutation(0.1),
+        "elitism": 1,
+        "max_generations": 300,
+        "patience": 30,
+    },
     ]
 
 
@@ -40,9 +50,9 @@ def run_all_experiments():
         instance = JobShopInstance(jobs)
 
         for i, config in enumerate(configs):
-            print(f"\nRunning instance {name}")
+            print(f"\n***** RUNNING INSTANCE {name} *****")
+            print(f"Configuration: {config['name']}")
             experiment = Experiment(instance, config)
             best, history = experiment.run()
             print(f"Best makespan: {best.fitness}")
             
-            best, history = experiment.run()
