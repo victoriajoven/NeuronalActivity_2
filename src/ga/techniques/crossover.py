@@ -1,5 +1,5 @@
 import random
-from ga.chromosome import Chromosome
+from src.ga.chromosome import Chromosome
 
 
 class PrecedencePreservingCrossover:

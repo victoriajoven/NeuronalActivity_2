@@ -1,13 +1,13 @@
-from jobmanager.parser import parse_orlib_jobshop
-from jobmanager.jobshop_instance import JobShopInstance
-from experiments.experiment import Experiment
-from ga.techniques.selection import TournamentSelection
-from ga.techniques.crossover import PrecedencePreservingCrossover
-from ga.techniques.mutation import SwapMutation
+from src.jobshop.parser import parse_orlib_jobshop
+from src.jobshop.jobshop_instance import JobShopInstance
+from src.experiments.experiment import Experiment
+from src.ga.techniques.selection import TournamentSelection
+from src.ga.techniques.crossover import PrecedencePreservingCrossover
+from src.ga.techniques.mutation import SwapMutation
 
 
 # Run experiments for multiple datasets and configurations
-# Datasets with different GA configurations (from OR-Library http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/jobshop1.txt)
+# Datasets with different GA configurations (from ..OR-Library http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/jobshop1.txt)
 # - SMALL: ft06.txt (6 jobs, 6 machines)
 # - MEDIUM: la19.txt (10 jobs, 10 machines)
 # - LARGE: yn1.txt (20 jobs, 20 machines)

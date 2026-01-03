@@ -1,7 +1,7 @@
 # src/ga/population.py
 import random
-from ga.chromosome import Chromosome
-from evaluation.makespan import compute_makespan
+from src.ga.chromosome import Chromosome
+from src.evaluation.makespan import compute_makespan
 
 
 class Population:

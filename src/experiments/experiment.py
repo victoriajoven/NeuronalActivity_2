@@ -1,6 +1,6 @@
 # src/experiments/experiment.py
-from ga.genetic_algorithm import GeneticAlgorithm
-from utils.logger import get_logger
+from src.ga.genetic_algorithm import GeneticAlgorithm
+from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
 class Experiment:

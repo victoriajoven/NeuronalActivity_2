@@ -1,5 +1,5 @@
 # src/ga/genetic_algorithm.py
-from ga.population import Population
+from src.ga.population import Population
 
 class GeneticAlgorithm:
     """Genetic Algorithm implementation for Job Shop Scheduling"""
