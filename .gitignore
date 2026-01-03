@@ -212,3 +212,6 @@ logs/
 
 # results
 results/
+
+# .vscode
+.vscode/

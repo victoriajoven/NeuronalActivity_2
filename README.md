@@ -1,4 +1,4 @@
-# Optimization of the Job Shop Scheduling Problem using Genetic Algorithms
+# A2: Optimization with Genetic Algorithms
 
 ## Overview
 
@@ -167,6 +167,9 @@ The optimization method implemented in this project is based on Genetic Algorith
 
 4. Run the experiments:
    ```python
-   python src/main.py
+   python -m src.main
 
 5. Results data and plots will be generated automatically in the ***results/*** directory.
+
+## Author
+Victoria Joven
