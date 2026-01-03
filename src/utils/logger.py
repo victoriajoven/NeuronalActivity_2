@@ -1,0 +1,34 @@
+# src/utils/logger.py
+import logging
+from logging.handlers import RotatingFileHandler
+from pathlib import Path
+
+LOG_DIR = Path("logs")
+LOG_FILE = LOG_DIR / "app.log"
+
+def get_logger(name: str) -> logging.Logger:
+    LOG_DIR.mkdir(exist_ok=True)
+
+    logger = logging.getLogger(name)
+
+    if logger.handlers:
+        return logger  # evita handlers duplicados
+
+    logger.setLevel(logging.INFO)
+
+    formatter = logging.Formatter(
+        "[%(asctime)s] [%(levelname)s] [%(name)s] %(message)s"
+    )
+
+    file_handler = RotatingFileHandler(
+        LOG_FILE,
+        maxBytes=5 * 1024 * 1024,  # 5MB
+        backupCount=5
+    )
+    file_handler.setFormatter(formatter)
+
+    logger.addHandler(file_handler)
+    logger.propagate = False
+
+    return logger
+

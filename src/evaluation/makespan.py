@@ -1,6 +1,10 @@
 # src/evaluation/makespan.py
 
 def compute_makespan(chromosome, instance):
+    """Compute the makespan of a given chromosome on the job shop instance."""
+    if instance.num_jobs == 0:
+        return 0   
+    
     machine_time = [0] * instance.num_machines
     job_time = [0] * instance.num_jobs
     job_op_index = [0] * instance.num_jobs
