@@ -1,7 +1,14 @@
-# Parser for OR-Library job shop instances
+# src/jobmanager/parser.py
 import logging
 
 def parse_orlib_jobshop(path):
+    """
+    Parse a job shop instance from an OR-Library formatted file (f.e. ft06.txt).
+    Args:
+        path (str): Path to the OR-Library job shop instance file.
+    Returns:
+        list: A list of jobs, where each job is a list of (machine, processing_time) tuples.
+    """
     jobs = []
     with open(path) as f:
         for line in f:

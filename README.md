@@ -60,29 +60,36 @@ The optimization is performed using a **Genetic Algorithm (GA)**, defined by the
 ```
 src/
 ├── experiments/
+│ ├── __init__.py
 │ ├── experiment.py             # Instance of experiment
 │ └── runner.py                 # Script to run all experiments
 │
 ├── ga/
+│ ├── __init__.py
 │ ├── chromosome.py             # Chromosome of job sequence
 │ ├── population.py             # Population of chromosome
 │ ├── genetic_algorithm.py      # Genetic Algorithm implementation for Job Shop Scheduling
 │ └── techniques/
+│   ├── __init__.py
 │   ├── selection.py            # Tournament and Roulette Wheel
 │   ├── crossover.py            # PPX and JBX
 │   └── mutation.py             # Swap and Insertion
 │
 ├── evaluation/
+│ ├── __init__.py
 │ └── makespan.py
 │
 ├── jobmanager/
+│ ├── __init__.py
 │ ├── parser.py
 │ └── jobshop_instance.py       # Generate an instance of jobs with job and machine
 │
 ├── results/
+│ ├── __init__.py
 │ ├── results_manager.py        # Save experiments results as JSON to plot
 │ └── plot_results.py           # Plot results
 │
+├── __init__.py
 └── main.py                     # Main method to launch experiments
 ```
 
@@ -145,12 +152,21 @@ The optimization method implemented in this project is based on Genetic Algorith
 
 ## How to Run
 
-1. Install required dependencies:
+1. Create a virtual environment:
    ```bash
-   pip install matplotlib numpy
+   python -m venv .venv
 
-2. Run the experiments:
+2. Activate the virtual environment:
+   ```bash
+   source .venv/bin/activate  # macOS / Linux
+   .venv\Scripts\activate     # Windows
+
+3. Install required dependencies:
+   ```bash
+   pip install -r requirements.txt
+
+4. Run the experiments:
    ```python
    python src/main.py
 
-3. Results and figures will be generated automatically in the ***results/ directory***.
+5. Results data and plots will be generated automatically in the ***results/*** directory.

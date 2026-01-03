@@ -16,7 +16,7 @@ def save_result(dataset_name, config_name, best_fitness, history):
         "timestamp": datetime.now().isoformat()
     }
 
-    filename = f"{dataset_name}_{config_name}_{int(datetime.now().timestamp())}.json"
+    filename = f"{dataset_name}_{config_name}.json"
     path = os.path.join(RESULTS_DIR, filename)
 
     with open(path, "w") as f:
