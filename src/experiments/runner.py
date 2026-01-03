@@ -4,6 +4,7 @@ from src.experiments.experiment import Experiment
 from src.ga.techniques.selection import RouletteWheelSelection, TournamentSelection
 from src.ga.techniques.crossover import PrecedencePreservingCrossover
 from src.ga.techniques.mutation import SwapMutation
+from src.results.results_manager import save_result
 
 
 # Run experiments for multiple datasets and configurations
@@ -55,4 +56,11 @@ def run_all_experiments():
             experiment = Experiment(instance, config)
             best, history = experiment.run()
             print(f"Best makespan: {best.fitness}")
+            
+            save_result(
+                dataset_name=name,
+                config_name=config["name"],
+                best_fitness=best.fitness,
+                history=history
+            )
             
