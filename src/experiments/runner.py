@@ -4,6 +4,7 @@ from src.experiments.experiment import Experiment
 from src.ga.techniques.selection import RouletteWheelSelection, TournamentSelection
 from src.ga.techniques.crossover import PrecedencePreservingCrossover
 from src.ga.techniques.mutation import SwapMutation
+from src.results.plot_results import plot_fitness_evolution
 from src.results.results_manager import save_result
 
 
@@ -57,10 +58,12 @@ def run_all_experiments():
             best, history = experiment.run()
             print(f"Best makespan: {best.fitness}")
             
-            save_result(
+            result_path = save_result(
                 dataset_name=name,
                 config_name=config["name"],
                 best_fitness=best.fitness,
                 history=history
             )
+            
+            plot_fitness_evolution(result_path)
             

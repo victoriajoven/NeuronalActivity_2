@@ -12,6 +12,7 @@ def test_run_all_experiments(monkeypatch):
     mock_best.fitness = 123
     mock_history = MagicMock()
     mock_result = MagicMock()
+    mock_plot = MagicMock()
 
     # parse_orlib_jobshop
     mock_parse = MagicMock(return_value=mock_jobs)
@@ -28,9 +29,12 @@ def test_run_all_experiments(monkeypatch):
     mock_experiment_cls = MagicMock(return_value=mock_experiment)
     monkeypatch.setattr(runner, "Experiment", mock_experiment_cls)
     
-    # save_result
+    # Results and plotting
     mock_save_result = MagicMock(return_value=mock_result)
     monkeypatch.setattr(runner, "save_result", mock_save_result)
+    mock_plot_fitness = MagicMock(return_value=mock_plot)
+    monkeypatch.setattr(runner, "plot_fitness_evolution", mock_plot_fitness)
+    
 
     # ---- Act ----
     runner.run_all_experiments()
