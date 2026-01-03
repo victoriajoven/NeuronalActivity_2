@@ -1,7 +1,9 @@
 # src/evaluation/makespan.py
+import logging
 
 def compute_makespan(chromosome, instance):
     """Compute the makespan of a given chromosome on the job shop instance."""
+    # Handle empty instance
     if instance.num_jobs == 0:
         return 0   
     
@@ -11,6 +13,13 @@ def compute_makespan(chromosome, instance):
 
     for job_id in chromosome.genes:
         op_idx = job_op_index[job_id]
+        
+        # Validate operation index
+        if op_idx >= len(instance.jobs[job_id]):
+            logging.error(f"Chromosome has invalid operation index for job {job_id}: {op_idx}")
+            raise ValueError(f"Invalid chromosome: job_id={job_id}, op_idx={op_idx}, "
+                             f"only {len(instance.jobs[job_id])} operations")
+        
         machine, duration = instance.jobs[job_id][op_idx]
 
         start = max(machine_time[machine], job_time[job_id])

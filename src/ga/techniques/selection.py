@@ -1,7 +1,10 @@
+# src/ga/techniques/selection.py
+# Selection techniques for genetic algorithms
 import random
 import numpy as np
 
 class TournamentSelection:
+    """Tournament selection for genetic algorithms."""
     def __init__(self, tournament_size=3):
         self.tournament_size = tournament_size
 

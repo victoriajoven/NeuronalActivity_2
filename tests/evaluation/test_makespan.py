@@ -1,6 +1,6 @@
 # tests/evaluation/test_makespan.py
 # Expected makespans are previsously calculated
-
+import pytest
 from src.evaluation.makespan import compute_makespan
 
 class FakeChromosome:
@@ -52,3 +52,11 @@ def test_compute_makespan_empty():
     makespan = compute_makespan(chromosome, instance)
 
     assert makespan == 0
+    
+def test_invalid_chromosome_raises():
+    jobs = [[(0, 1)]]
+    instance = FakeInstance(jobs, num_machines=1)
+    chromosome = FakeChromosome([0, 0])  # demasiadas ops
+
+    with pytest.raises(ValueError):
+        compute_makespan(chromosome, instance)
