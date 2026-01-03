@@ -11,6 +11,7 @@ def test_run_all_experiments(monkeypatch):
     mock_best = MagicMock()
     mock_best.fitness = 123
     mock_history = MagicMock()
+    mock_result = MagicMock()
 
     # parse_orlib_jobshop
     mock_parse = MagicMock(return_value=mock_jobs)
@@ -26,6 +27,10 @@ def test_run_all_experiments(monkeypatch):
 
     mock_experiment_cls = MagicMock(return_value=mock_experiment)
     monkeypatch.setattr(runner, "Experiment", mock_experiment_cls)
+    
+    # save_result
+    mock_save_result = MagicMock(return_value=mock_result)
+    monkeypatch.setattr(runner, "save_result", mock_save_result)
 
     # ---- Act ----
     runner.run_all_experiments()
@@ -37,7 +42,7 @@ def test_run_all_experiments(monkeypatch):
     assert mock_js_instance.call_count == 3
 
     # 1 config by dataset
-    assert mock_experiment_cls.call_count == 3
+    assert mock_experiment_cls.call_count == 6
 
     # Check calls to Experiment with correct parameters
     assert mock_experiment.run.call_count == 6
