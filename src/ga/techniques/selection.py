@@ -28,7 +28,7 @@ class TournamentSelection:
 
         for _ in range(pop_size):
             contenders = random.sample(pop, k)
-            parents.append(min(contenders, key=lambda c: c.fitness))
+            parents.append(min(contenders, key=lambda c: c.fitness).copy())
 
         return parents
     
