@@ -46,8 +46,8 @@ def test_run_all_experiments(monkeypatch):
     assert mock_js_instance.call_count == 3
 
     # 1 config by dataset
-    assert mock_experiment_cls.call_count == 6
+    assert mock_experiment_cls.call_count == 18
 
     # Check calls to Experiment with correct parameters
-    assert mock_experiment.run.call_count == 6
+    assert mock_experiment.run.call_count == 18
 

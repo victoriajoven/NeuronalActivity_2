@@ -4,7 +4,7 @@ from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
 class Experiment:
-    """Class to run a GA experiment on a Job Shop Scheduling instance"""
+    """Class to run a GA experiment on a Job Shop Scheduling Problem"""
     def __init__(self, instance, config):
         self.instance = instance
         self.config = config

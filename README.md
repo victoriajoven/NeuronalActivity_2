@@ -82,7 +82,7 @@ src/
 ├── jobmanager/
 │ ├── __init__.py
 │ ├── parser.py
-│ └── jobshop_instance.py       # Generate an instance of jobs with job and machine
+│ └── jobshop_instance.py       # Generate an instance of Job Shop Problem (job and machine)
 │
 ├── results/
 │ ├── __init__.py
@@ -146,6 +146,7 @@ Github examples:
  - https://github.com/Incalos/FJSP-With-Genetic-Algorithm
  - https://github.com/samy-barrech/Flexible-Job-Shop-Scheduling-Problem
  - https://github.com/Eason0227/Job-shop-scheduling-problem/blob/main/GA%20for%20JSSP.ipynb
+ - https://github.com/ruta-tamosiunaite/partially-mapped-crossover/blob/main/partially_mapped_crossover.py
 
 The optimization method implemented in this project is based on Genetic Algorithms.
 
