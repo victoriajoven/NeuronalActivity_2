@@ -136,7 +136,8 @@ All results are saved in structured JSON format.  Plots are stored as image file
 ---
 
 ## References
-
+U6 Optimization Slides PDF (URV):
+ - https://campusvirtual.urv.cat/ (Unit 6 - NEURAL AND EVOLUTIONARY COMPUTATION - Optimization GA)
 Job Shop Scheduling Problem:
  - https://en.wikipedia.org/wiki/Job-shop_scheduling
 Google Job Shop Problem:
