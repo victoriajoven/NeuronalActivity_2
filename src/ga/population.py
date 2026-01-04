@@ -5,7 +5,15 @@ from src.evaluation.makespan import compute_makespan
 
 
 class Population:
-    """Population of chromosomes for the GA"""
+    """
+    Population of chromosomes in the Genetic Algorithm:
+    - initialize: Initializing a population of valid chromosomes (permutation-based encoding)
+    - evaluate: Evaluation of each chromosome using the makespan as fitness value
+    - update_best: Select best chromosome (minimum makespan with fitness) and track history 
+    - select_best: top-n chromosomes with the lowest makespan
+    - replace: Replacing the population with new offspring while preserving elites
+    - is_converged: Check convergence based on best fitness history
+    """
     def __init__(self, chromosomes):
         self.chromosomes = chromosomes
         self.best_chromosome = None

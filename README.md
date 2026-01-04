@@ -56,7 +56,7 @@ The optimization is performed using a **Genetic Algorithm (GA)**, defined by the
 
 ---
 
-## Project Structure (probably this structure will change on future commits)
+## Project Structure
 ```
 src/
 ├── experiments/
@@ -137,16 +137,27 @@ All results are saved in structured JSON format.  Plots are stored as image file
 
 ## References
 
-- Job Shop Scheduling Problem:
-  - https://en.wikipedia.org/wiki/Job-shop_scheduling
-- Google Job Shop Problem:
-  - https://developers.google.com/optimization/scheduling/job_shop
-- Github examples:
-  - https://github.com/Incalos/FJSP-With-Genetic-Algorithm
-  - https://github.com/samy-barrech/Flexible-Job-Shop-Scheduling-Problem
-  - https://github.com/Eason0227/Job-shop-scheduling-problem/blob/main/GA%20for%20JSSP.ipynb
+Job Shop Scheduling Problem:
+ - https://en.wikipedia.org/wiki/Job-shop_scheduling
+Google Job Shop Problem:
+ - https://developers.google.com/optimization/scheduling/job_shop
+Github examples:
+ - https://github.com/Incalos/FJSP-With-Genetic-Algorithm
+ - https://github.com/samy-barrech/Flexible-Job-Shop-Scheduling-Problem
+ - https://github.com/Eason0227/Job-shop-scheduling-problem/blob/main/GA%20for%20JSSP.ipynb
 
 The optimization method implemented in this project is based on Genetic Algorithms.
+
+---
+
+## Jupyter Notebook Base Example
+
+Before creating the structure of the project in Python, a Jupyter notebook has been created based on the master's documentation, the document references and different GitHub repositories.  
+
+Although it is not exactly the same as the content of the project, it facilitates the understanding of the optimization of the genetic algorithm applied to the Job Shop Problem.
+
+The Jupyter notebook is ***GA_JSSP_Basic_example.ipynb*** (located on notebooks/ directory).
+
 
 ---
 

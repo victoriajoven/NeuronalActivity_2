@@ -6,6 +6,9 @@ from datetime import datetime
 RESULTS_DIR = "results/data"
 
 def save_result(dataset_name, config_name, best_fitness, history):
+    """
+    Save experiment result to a JSON file.
+    """
     os.makedirs(RESULTS_DIR, exist_ok=True)
     
     result = {

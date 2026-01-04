@@ -2,7 +2,11 @@
 import logging
 
 def compute_makespan(chromosome, instance):
-    """Compute the makespan of a given chromosome on the job shop instance."""
+    """
+    Compute the makespan (total completion time) of a chromosome on a job shop instance.
+    Simulates the schedule by tracking the current time of each machine and job.
+    Processes operations in the order defined by the chromosome genes.
+    """
     # Handle empty instance
     if instance.num_jobs == 0:
         return 0   

@@ -4,7 +4,13 @@ import random
 import numpy as np
 
 class TournamentSelection:
-    """Tournament selection for genetic algorithms."""
+    """
+    Tournament Selection:
+    Picks parents for the next generation by holding "mini-competitions" among small, 
+    random subsets (tournaments) of the population, 
+    selecting the fittest individual from each group to move forward, 
+    effectively balancing selection pressure and diversity by adjusting the tournament size (k)
+    """
     def __init__(self, tournament_size=3):
         self.tournament_size = tournament_size
 
@@ -27,7 +33,11 @@ class TournamentSelection:
         return parents
     
 class RouletteWheelSelection:
-    """Roulette wheel selection for genetic algorithms."""
+    """
+    Roulette Wheel:
+    Selection technique used in evolutionary algorithms for selecting potentially 
+    useful solutions for recombination (inspired on the concept of a roulette wheel in a casino).
+    """
     def select(self, population):
         parents = []
         pop = population.chromosomes

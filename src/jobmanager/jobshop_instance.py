@@ -1,5 +1,11 @@
 # src/jobmanager/jobshop_instance.py
 class JobShopInstance:
+    """
+    Job Shop Scheduling Problem (JSSP):
+    Represents a Job Shop Scheduling instance with jobs and their operations.
+    It provides a structured and reusable representation of the problem
+    that can be shared across different optimization algorithms.
+    """
     def __init__(self, jobs):
         """
         jobs: List[List[Tuple[machine_id, processing_time]]]
