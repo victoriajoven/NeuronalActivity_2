@@ -178,11 +178,15 @@ The Jupyter notebook is ***GA_JSSP_Basic_example.ipynb*** (located on notebooks/
    ```bash
    pip install -r requirements.txt
 
-4. Run the experiments:
+4. Run the experiments (GA):
    ```python
    python -m src.main
 
 5. Results data and plots will be generated automatically in the ***results/*** directory.
+
+6. Run second optimization method Simulated Annealing (optional):
+   ```python
+   python -m src.main_sa
 
 ## Author
 Victoria Joven
