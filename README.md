@@ -84,13 +84,18 @@ src/
 │ ├── parser.py
 │ └── jobshop_instance.py       # Generate an instance of Job Shop Problem (job and machine)
 │
+├── optimizers/
+│ ├── __init__.py
+│ └── simulated_annealing.py    # Simulated Annealing for Job Shop Scheduling
+│
 ├── results/
 │ ├── __init__.py
 │ ├── results_manager.py        # Save experiments results as JSON to plot
 │ └── plot_results.py           # Plot results
 │
 ├── __init__.py
-└── main.py                     # Main method to launch experiments
+├── main_sa.py                  # Main method to run Simulated Annealing on a JSSP instance
+└── main.py                     # Main method to launch GA JSSP experiments
 ```
 
 ---
